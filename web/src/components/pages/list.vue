@@ -12,6 +12,7 @@
                 <div class="left"></div>
                 <div class="content">
                     <div class="page">
+                        <card-block v-for="(item,index) in articles" :key="index" :title="item.title"></card-block>
                     </div>
                 </div>
                 <div class="right"></div>
@@ -21,11 +22,28 @@
     </div>
 </template>
 <script>
+import cardBlock from '../block/card'
 export default {
   name: 'listPage',
+  components: {cardBlock},
   data () {
     return {
-      title: '这里是列表页'
+      title: '这里是列表页',
+      articles: [
+        {
+          title: '设计模式-建造者模式',
+          description: '建造者模式(Singleton Pattern)也叫生成器模式。其定义是：将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。'
+        }, {
+          title: '设计模式-建造者模式',
+          description: '建造者模式(Singleton Pattern)也叫生成器模式。其定义是：将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。'
+        }, {
+          title: '设计模式-建造者模式',
+          description: '建造者模式(Singleton Pattern)也叫生成器模式。其定义是：将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。'
+        }, {
+          title: '设计模式-建造者模式',
+          description: '建造者模式(Singleton Pattern)也叫生成器模式。其定义是：将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。'
+        }
+      ]
     }
   }
 }
@@ -74,7 +92,7 @@ html,body{
 }
 .left{
     flex:0 0 250px;
-    background: transparent;
+    background: #eee;
 }
 .content{
     flex: 1;
@@ -83,7 +101,7 @@ html,body{
 }
 .right{
     flex:0 0 250px;
-    background: transparent;
+    background: #eee;
 }
 .bottom{
     background: #777;
@@ -93,7 +111,7 @@ html,body{
 }
 .page{
     width: 100%;
-    height: 850px;
+    min-height: 650px;
 }
 @media screen and (max-width: 800px) {
     .left {

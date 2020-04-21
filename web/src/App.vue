@@ -21,4 +21,8 @@ export default {
 body,html{
   margin: 0;
 }
+
+.mobile-contaniner{
+  margin: 8px;
+}
 </style>

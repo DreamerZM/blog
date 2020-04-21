@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import IndexPage from '@/components/pages/index'
 import ControllerPage from '@/components/pages/controller'
 import ListPage from '@/components/pages/list'
+import inputNumber from '@/components/tests/inputNumber'
 Vue.use(Router)
 
 let router = new Router({
@@ -27,6 +28,13 @@ let router = new Router({
       component: ListPage,
       meta: {
         title: '列表页'
+      }
+    }, {
+      path: '/test/input_number',
+      name: 'inputNumber',
+      component: inputNumber,
+      meta: {
+        title: '移动端数字输入框'
       }
     }
   ]
